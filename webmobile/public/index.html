@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Supabase Admin</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-tab="users">
+                    <span class="nav-icon">👤</span>
+                    <span>Users</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="fasum">
+                    <span class="nav-icon">📍</span>
+                    <span>Fasum</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="addBtn">
+                        <span>+ Tambah Data</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Users Section -->
+            <section id="users-section" class="content-section active">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Daftar Users</h2>
+                        <span class="badge" id="users-count">0</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Password</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <!-- Data akan dimuat via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fasum Section -->
+            <section id="fasum-section" class="content-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Daftar Fasum</h2>
+                        <span class="badge" id="fasum-count">0</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Lokasi</th>
+                                    <th>Longitude</th>
+                                    <th>Latitude</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fasum-table-body">
+                                <!-- Data akan dimuat via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Tambah Data</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <form id="dataForm">
+                <div class="modal-body" id="modal-body">
+                    <!-- Form fields akan dimuat via JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
